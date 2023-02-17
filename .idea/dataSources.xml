@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="BDD Camping" uuid="5ffe9d53-dacf-4807-a39c-b7ffa51ac172">
+    <data-source source="LOCAL" name="BDD" uuid="21e32fe8-edf6-433e-a1c6-f5048f2d9719">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
