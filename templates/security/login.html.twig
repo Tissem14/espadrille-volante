@@ -15,14 +15,15 @@
     {% endif %}
 
     <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+
     <label for="inputEmail">Email</label>
     <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+
     <label for="inputPassword">Password</label>
     <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
 
     <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}"
-    >
+           value="{{ csrf_token('authenticate') }}">
 
     {#
         Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
@@ -39,4 +40,55 @@
         Sign in
     </button>
 </form>
+
 {% endblock %}
+
+
+
+
+
+{#  -------- FORMULAIRE BOOSTRAP ----------
+<form class="form-signin w-100 m-auto text-center">
+    <!-- Si erreur de chargement de la page, affichage d'un message d'erreur -->
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+
+    <!--LOGO-->
+    <img class="mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+    <!-- Titre de la page -->
+    <h1 class="h3 mb-3 fw-normal">Connexion</h1>
+
+    <!-- Email champ -->
+    <div class="form-floating">
+        <input type="email" class="form-control" value="{{ last_username }}" id="inputEmail" placeholder="name@example.com" autocomplete="email" required autofocus>
+        <label for="floatingInput">Email</label>
+    </div>
+
+    <!-- Password champ -->
+    <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" autocomplete="current-password" required>
+        <label for="floatingPassword">Mot de passe</label>
+    </div>
+
+    {#
+    Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+    See https://symfony.com/doc/current/security/remember_me.html
+    <div class="checkbox mb-3">
+        <label>
+            <input type="checkbox" value="remember-me" name="_remember_me"> Se souvenir de moi
+        </label>
+    </div>
+    #}
+
+   {# <input type="hidden" name="_csrf_token"
+           value="{{ csrf_token('authenticate') }}">
+
+    <!-- Bouton de connexion -->
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Se connecter</button>
+
+    <!-- Message d'indication -->
+    <p class="mt-5 mb-3 text-muted">ESPACE RESERVEE AU PARTICULIER ET ADMINISTRATEUR DU CAMPING</p>
+</form>
+#}

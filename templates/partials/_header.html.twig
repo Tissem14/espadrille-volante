@@ -1,5 +1,5 @@
 {% if app.user %}
-    <nav class="navbar navbar-dark bg-dark" aria-label="Dark offcanvas navbar">
+    <nav class="navbar navbar-dark fixed-top bg-dark" aria-label="Dark offcanvas navbar">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarDark" aria-controls="offcanvasNavbarDark">
                 <span class="navbar-toggler-icon"></span>
@@ -12,16 +12,16 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">ACCUEIL</a>
+                            <a class="nav-link active" aria-current="page" href="{{ path('app_home') }}">ACCUEIL</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">FACTURES</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">HEBERGEMENTS</a>
+                            <a class="nav-link active" aria-current="page" href="{{ path('app_hebergement') }}">HEBERGEMENTS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">PLANNING RESERVATION</a>
+                            <a class="nav-link active" aria-current="page" href="{{ path('app_apropos') }}">PLANNING RESERVATION</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ path('app_logout') }} ">Deconnexion</a>
@@ -33,7 +33,7 @@
     </nav>
 {% endif %}
 
-<nav class="navbar navbar-dark bg-dark" aria-label="Dark offcanvas navbar">
+<nav class="navbar navbar-dark fixed-top bg-dark" aria-label="Dark offcanvas navbar">
     <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarDark" aria-controls="offcanvasNavbarDark">
             <span class="navbar-toggler-icon"></span>
@@ -46,19 +46,19 @@
             <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">ACCUEIL</a>
+                        <a class="nav-link active" aria-current="page" href="{{ path('app_home') }}">ACCUEIL</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">NOS HEBERGEMENTS</a>
+                        <a class="nav-link active" aria-current="page" href="{{ path('app_hebergement') }}">NOS HEBERGEMENTS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">A PROPOS</a>
+                        <a class="nav-link active" aria-current="page" href="{{ path('app_apropos') }}">A PROPOS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">INFOS PRATIQUES</a>
+                        <a class="nav-link active" aria-current="page" href="{{ path('app_info_pratique') }}">INFOS PRATIQUES</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ path('app_login') }} ">Connexion</a>
+                        <a class="nav-link" href="{{ path('app_login') }} ">ESPACE PROFESSIONNEL</a>
                     </li>
 
                 </ul>
