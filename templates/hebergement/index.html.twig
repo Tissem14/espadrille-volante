@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}LES HÉBERGEMENTS{% endblock %}
+
+{% block body %}
+    <!--Partie du titre et image d'accueil-->
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <!-- Titre -->
+                <h1 class="fw-light">LES HÉBERGEMENTS</h1>
+                <!-- Sous-titre -->
+                <p class="lead text-muted">EMPLACEMENTS ET LOCATIONS DE CAMPING À CANET EN ROUSSILLON</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partie des cartes d'hébergement -->
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+                <!-- Les Mobiles-Homes -->
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <!-- Image de la carte -->
+                        <img src="{{ asset('img/mobilehome.webp') }}" width="100%" height="225">
+                        <div class="card-body">
+                            <!-- Titre de la carte -->
+                            <p style="text-align: center"><strong>Les Mobiles-Homes</strong></p>
+                            <!-- Description de la carte -->
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <!--Bouton avec lien de redirection-->
+                                    <a href="#" class="btn btn-secondary my-2">Découvrir</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Les Emplacements -->
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <!-- Image de la carte -->
+                        <img src="{{ asset('img/emplacement.webp') }}" width="100%" height="225">
+                        <div class="card-body">
+                            <!-- Titre de la carte -->
+                            <p style="text-align: center"><strong>Les Emplacements</strong></p>
+                            <!-- Description de la carte -->
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <!--Bouton avec lien de redirection-->
+                                    <a href="#" class="btn btn-secondary my-2">Découvrir</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Les caravanes -->
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <!-- Image de la carte -->
+                        <img src="{{ asset('img/caravane.webp') }}" width="100%" height="225">
+                        <div class="card-body">
+                            <!-- Titre de la carte -->
+                            <p style="text-align: center"><strong>Les Caravanes</strong></p>
+                            <!-- Description de la carte -->
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <!--Bouton avec lien de redirection-->
+                                    <a href="#" class="btn btn-secondary my-2">Découvrir</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
