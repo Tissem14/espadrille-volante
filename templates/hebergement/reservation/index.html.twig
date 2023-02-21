@@ -1,0 +1,110 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mobile-Home{% endblock %}
+
+{% block body %}
+    <!--Partie du titre et image d'accueil-->
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <!-- Titre -->
+                <h1 class="fw-light">LES MOBILES-HOMES</h1>
+                <!-- Sous-titre -->
+                <p class="lead text-muted">BLABLABLA</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="py-5 container" style="display: flex; justify-content: space-around;">
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Titre hébergement</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="{{ path('app_hebergement_detail') }}" class="btn btn-secondary my-2">Plus de détails</a>
+            </div>
+        </div>
+
+        <!-- Formulaire de reservation -->
+        <form class="row g-3 needs-validation" novalidate style="width: 60%;">
+            <h2>Vous êtes entrain de réservez ce logement.</h2>
+            <!--Prénom-->
+            <div class="col-md-4">
+                <label for="validationCustom01" class="form-label">Prénom</label>
+                <input type="text" class="form-control" id="validationCustom01" placeholder="Mark" required>
+                <div class="valid-feedback">Looks good!</div>
+            </div>
+
+            <!--Nom-->
+            <div class="col-md-4">
+                <label for="validationCustom02" class="form-label">Nom</label>
+                <input type="text" class="form-control" id="validationCustom02" placeholder="Otto" required>
+                <div class="valid-feedback"> Looks good! </div>
+            </div>
+
+            <!--Email-->
+            <div class="col-md-4">
+                <label for="validationCustomUsername" class="form-label">Email</label>
+                <div class="input-group has-validation">
+                    <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required placeholder="markotto@gmail.com">
+                    <div class="invalid-feedback"> Veuillez saisir une adresse mail. </div>
+                </div>
+            </div>
+
+            <!--Téléphone-->
+            <div class="col-md-4">
+                <label for="validationCustom02" class="form-label">Téléphone</label>
+                <input type="text" class="form-control" id="validationCustom02" placeholder="07 18 34 48 18" required>
+                <div class="valid-feedback"> Looks good! </div>
+            </div>
+
+            <!-- Choisir le nombre d'adulte-->
+            <div class="col-md-3">
+                <label for="validationCustom04" class="form-label">Nombre d'adulte</label>
+                <select class="form-select" id="validationCustom04" required>
+                    <option selected disabled value="1">1</option>
+                    <option>...</option>
+                </select>
+            </div>
+            <!-- Choisir le nombre d'enfant-->
+            <div class="col-md-3">
+                <label for="validationCustom04" class="form-label">Nombre d'enfant</label>
+                <select class="form-select" id="validationCustom04" required>
+                    <option selected disabled value="0">0</option>
+                    <option>...</option>
+                </select>
+            </div>
+
+            <!--Date d'arriver et de départ-->
+            <div class="col-md-6">
+                <label for="validationCustom03" class="form-label">Séléctionnez vos dates :</label>
+                <input type="text" class="form-control" id="validationCustom03" required>
+                <div class="invalid-feedback"> Sélectionnez une date d'arriver. </div>
+            </div>
+
+            <div class="col-md-6">
+                <label for="validationCustom03" class="form-label"></label>
+                <input type="text" class="form-control" id="validationCustom03" required>
+                <div class="invalid-feedback"> Sélectionnez une date de départ. </div>
+            </div>
+
+            <!-- Accepter les termes et conditions -->
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                    <label class="form-check-label" for="invalidCheck">
+                        Accepter les termes et conditions.
+                    </label>
+                    <div class="invalid-feedback">
+                        Veuillez accepter les termes et conditions.
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <button class="btn btn-secondary" type="submit">Réservez</button>
+            </div>
+        </form>
+    </section>
+
+{% endblock %}

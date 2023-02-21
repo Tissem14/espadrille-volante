@@ -1,0 +1,15 @@
+App\Entity\User:
+  userproprio_{1..10}:
+    email: <email()>
+    roles: <randomElements(['ROLE_PROPRIO'], 1)>
+    password: <password()>
+    lastName: <lastName()>
+    firstName: <firstName()>
+    phone: <phoneNumber()>
+  useradmin_{1..10}:
+    email: <email()>
+    roles: <randomElements(['ROLE_ADMIN'], 1)>
+    password: <password()>
+    lastName: <lastName()>
+    firstName: <firstName()>
+    phone: <phoneNumber()>

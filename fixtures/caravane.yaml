@@ -1,0 +1,32 @@
+App\Entity\Logement:
+  caravane2admin_{1}:
+    infoLogement: '@typecaravane2_*'
+    description: <text()>
+    img: https://picsum.photos/300/300
+    owner: '@useradmin_*'
+  caravane4admin_{1..2}:
+    infoLogement: '@typecaravane4_*'
+    description: <text()>
+    img: https://picsum.photos/300/300
+    owner: '@useradmin_*'
+  caravane6admin_{1..2}:
+    infoLogement: '@typecaravane6_*'
+    description: <text()>
+    img: https://picsum.photos/300/300
+    owner: '@useradmin_*'
+  caravane2proprio_{1..2}:
+    infoLogement: '@typecaravane2_*'
+    description: <text()>
+    img: https://picsum.photos/300/300
+    owner: '@userproprio_*'
+  caravane4proprio_{1..2}:
+    infoLogement: '@typecaravane4_*'
+    description: <text()>
+    img: https://picsum.photos/300/300
+    owner: '@userproprio_*'
+  caravane6proprio_{1}:
+    infoLogement: '@typecaravane6_*'
+    description: <text()>
+    img: https://picsum.photos/300/300
+    owner: '@userproprio_*'
+

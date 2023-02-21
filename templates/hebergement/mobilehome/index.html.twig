@@ -1,9 +1,48 @@
+<!-- Page de tout les mobiles-homes disponible sur le site -->
+
 {% extends 'base.html.twig' %}
 
 {% block title %}Mobile-Home{% endblock %}
 
 {% block body %}
-    <div class="example-wrapper">
-        <h1>Mobile Home ✅</h1>
+    <!--Partie du titre et image d'accueil-->
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <!-- Titre de la page-->
+                <h1 class="fw-light">LES MOBILES-HOMES</h1>
+                <!-- Sous-titre de la page -->
+                <p class="lead text-muted">BLABLABLA</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <!-- Image du logement -->
+                        <img src="" width="100%" height="225">
+                        <div class="card-body">
+                            <!-- Titre du logement -->
+                            <p></p>
+                            <!-- Description du logement -->
+                            <p class="card-text">{{ mobile_homes.description }}</p>
+                            <!-- Tarif du logement -->
+                            <p>A partir de .. € de la nuit.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <!-- Lien vers la page détail du logement en question -->
+                                    <a href="{{ path('app_hebergement_detail') }}" class="btn btn-secondary my-2">Détail</a>
+                                    <!-- Lien vers la page réservation du logement en question -->
+                                    <a href="{{ path('app_hebergement_reservation') }}" class="btn btn-secondary my-2">Réservez</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}

@@ -132,6 +132,11 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/validator" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/flex" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/webpack-encore-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/nelmio/alice" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/fakerphp/faker" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/theofidry/alice-data-fixtures" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/data-fixtures" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/hautelook/alice-bundle" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -1,0 +1,41 @@
+App\Entity\Logement:
+  mobilehome3admin_{1..5}:
+    infoLogement: '@typemobilehome3_*'
+    description: <text()>
+    img: https://picsum.photos/300/300
+    owner: '@useradmin_*'
+  mobilehome4admin_{1..5}:
+    infoLogement: '@typemobilehome4_*'
+    description: <text()>
+    img: https://picsum.photos/300/300
+    owner: '@useradmin_*'
+  mobilehome5admin_{1..5}:
+    infoLogement: '@typemobilehome5_*'
+    description: <text()>
+    img: https://picsum.photos/300/300
+    owner: '@useradmin_*'
+  mobilehome6a8admin_{1..5}:
+    infoLogement: '@typemobilehome6a8_*'
+    description: <text()>
+    img: https://picsum.photos/300/300
+    owner: '@useradmin_*'
+  mobilehome3proprio_{1..7}:
+    infoLogement: '@typemobilehome3_*'
+    description: <text()>
+    img: https://picsum.photos/300/300
+    owner: '@userproprio_*'
+  mobilehome4proprio_{1..7}:
+    infoLogement: '@typemobilehome4_*'
+    description: <text()>
+    img: https://picsum.photos/300/300
+    owner: '@userproprio_*'
+  mobilehome5proprio_{1..8}:
+    infoLogement: '@typemobilehome5_*'
+    description: <text()>
+    img: https://picsum.photos/300/300
+    owner: '@userproprio_*'
+  mobilehome6a8proprio_{1..8}:
+    infoLogement: '@typemobilehome6a8_*'
+    description: <text()>
+    img: https://picsum.photos/300/300
+    owner: '@userproprio_*'

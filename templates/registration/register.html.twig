@@ -4,20 +4,58 @@
 
 {% block body %}
     <h1>Register</h1>
+    <section class="py-5 container" style="display: flex; justify-content: space-around;">
+        <!-- Formulaire de reservation -->
+        <div class="row g-3 needs-validation" novalidate style="width: 60%;">
+            {{ form_start(registrationForm) }}
+            <h2 style="text-align: center">Inscrire un nouvel utilisateur</h2>
+            <!--Prénom-->
+            <div class="col-md-4">
+                {{ form_row(registrationForm.firstName, {
+                    label: 'Prénom'}) }}
+            </div>
 
-    {{ form_start(registrationForm) }}
-    {{ form_row(registrationForm.firstName, {
-        label: 'Prénom'}) }}
+            <!--Nom-->
+            <div class="col-md-4">
+                {{ form_row(registrationForm.lastName, {
+                    label: 'Nom'}) }}
+            </div>
 
-    {{ form_row(registrationForm.lastName, {
-        label: 'Nom'}) }}
+            <!--Email-->
+            <div class="col-md-4">
+                {{ form_row(registrationForm.email) }}
+            </div>
 
-    {{ form_row(registrationForm.email) }}
+            <!--Téléphone-->
+            <div class="col-md-4">
+                {{ form_row(registrationForm.phone, {
+                    label: 'Téléphone'}) }}
+            </div>
 
-    {{ form_row(registrationForm.plainPassword, {
-        label: 'Mot de Passe'}) }}
+            <!--Mot de passe-->
+            <div class="col-md-4">
+                {{ form_row(registrationForm.plainPassword, {
+                    label: 'Mot de Passe'}) }}
+            </div>
 
-    {{ form_row(registrationForm.agreeTerms) }}
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+            <!--Type de compte-->
+            <div class="col-md-3">
+                {{ form_row(registrationForm.roles, {
+                    label: 'Type de compte'}) }}
+            </div>
+
+            <!-- Accepte les termes et conditions -->
+            <div class="col-12">
+                <div class="form-check">
+                    {{ form_row(registrationForm.agreeTerms) }}
+                </div>
+            </div>
+
+            <!--Bouton d'inscription-->
+            <div class="col-12">
+                <button class="btn btn-secondary" type="submit">Inscrire</button>
+            </div>
+            {{ form_end(registrationForm) }}
+        </div>
+    </section>
 {% endblock %}

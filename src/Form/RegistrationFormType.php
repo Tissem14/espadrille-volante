@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -20,6 +21,16 @@ class RegistrationFormType extends AbstractType
             ->add('firstName')
             ->add('lastName')
             ->add('email')
+            ->add('phone')
+            ->add('roles', ChoiceType::class, [
+                'choices' => [
+                    'Propiétaire' => 'ROLE_USER',
+                    'Administrateur' => 'ROLE_ADMIN'
+                ],
+                'expanded' => true,
+                'multiple' => false,
+                'label' => 'Type de compte'
+            ])
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
                 'constraints' => [
@@ -35,7 +46,7 @@ class RegistrationFormType extends AbstractType
                 'attr' => ['autocomplete' => 'new-password'],
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Please enter a password',
+                        'message' => 'Veuillez saisir un mot de passe.',
                     ]),
                     new Length([
                         'min' => 6,

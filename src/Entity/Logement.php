@@ -16,43 +16,23 @@ class Logement
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\ManyToOne]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?InfoLogement $type_id = null;
-
     #[ORM\Column(length: 255)]
     private ?string $description = null;
-
-    #[ORM\OneToMany(mappedBy: 'logement', targetEntity: Img::class)]
-    private Collection $img;
-
-    #[ORM\Column(type: Types::DATE_MUTABLE)]
-    private ?\DateTimeInterface $date = null;
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
     private ?User $owner = null;
 
-    public function __construct()
-    {
-        $this->img = new ArrayCollection();
-    }
+    #[ORM\ManyToOne]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?InfoLogement $infoLogement = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $img = null;
 
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getTypeId(): ?InfoLogement
-    {
-        return $this->type_id;
-    }
-
-    public function setTypeId(?InfoLogement $type_id): self
-    {
-        $this->type_id = $type_id;
-
-        return $this;
     }
 
     public function getDescription(): ?string
@@ -63,48 +43,6 @@ class Logement
     public function setDescription(string $description): self
     {
         $this->description = $description;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Img>
-     */
-    public function getImg(): Collection
-    {
-        return $this->img;
-    }
-
-    public function addImg(Img $img): self
-    {
-        if (!$this->img->contains($img)) {
-            $this->img->add($img);
-            $img->setLogement($this);
-        }
-
-        return $this;
-    }
-
-    public function removeImg(Img $img): self
-    {
-        if ($this->img->removeElement($img)) {
-            // set the owning side to null (unless already changed)
-            if ($img->getLogement() === $this) {
-                $img->setLogement(null);
-            }
-        }
-
-        return $this;
-    }
-
-    public function getDate(): ?\DateTimeInterface
-    {
-        return $this->date;
-    }
-
-    public function setDate(\DateTimeInterface $date): self
-    {
-        $this->date = $date;
 
         return $this;
     }
@@ -120,4 +58,30 @@ class Logement
 
         return $this;
     }
+
+    public function getInfoLogement(): ?InfoLogement
+    {
+        return $this->infoLogement;
+    }
+
+    public function setInfoLogement(?InfoLogement $infoLogement): self
+    {
+        $this->infoLogement = $infoLogement;
+
+        return $this;
+    }
+
+    public function getImg(): ?string
+    {
+        return $this->img;
+    }
+
+    public function setImg(string $img): self
+    {
+        $this->img = $img;
+
+        return $this;
+    }
+
+
 }

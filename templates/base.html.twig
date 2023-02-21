@@ -18,10 +18,9 @@
     </head>
 
     <body>
-    <!-- Début du Header -->
-    <header>
-        {% include 'partials/_header.html.twig' %}
-    </header>
+    <!-- Header -->
+    {% include 'partials/_header.html.twig' %}
+
 
     <!-- Début du Main -->
     <main>
@@ -29,11 +28,8 @@
         {% endblock %}
     </main>
 
-    <!-- Début du Footer -->
-    <footer class="container">
-        <p class="float-end"><a href="#">Back to top</a></p>
-        <p>© 2017–2022 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
-    </footer>
+    <!-- Footer -->
+    {% include 'partials/_footer.html.twig' %}
 
     </body>
 

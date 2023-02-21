@@ -1,0 +1,21 @@
+App\Entity\Logement:
+  emplacement8admin_{1..8}:
+    infoLogement: '@typeemplacement8_*'
+    description: <text()>
+    img: https://picsum.photos/300/300
+    owner: '@useradmin_*'
+  emplacement12admin_{1..7}:
+    infoLogement: '@typeemplacement12_*'
+    description: <text()>
+    img: https://picsum.photos/300/300
+    owner: '@useradmin_*'
+  emplacement8proprio_{1..7}:
+    infoLogement: '@typeemplacement8_*'
+    description: <text()>
+    img: https://picsum.photos/300/300
+    owner: '@userproprio_*'
+  emplacement12proprio_{1..8}:
+    infoLogement: '@typeemplacement12_*'
+    description: <text()>
+    img: https://picsum.photos/300/300
+    owner: '@userproprio_*'
