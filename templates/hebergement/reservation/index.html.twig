@@ -8,9 +8,9 @@
         <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto">
                 <!-- Titre -->
-                <h1 class="fw-light">LES MOBILES-HOMES</h1>
+                <h1 class="fw-light">RESERVATION</h1>
                 <!-- Sous-titre -->
-                <p class="lead text-muted">BLABLABLA</p>
+                <p class="lead text-muted">Vous avez choisis votre {{ logement.infoLogement.type }}, procédez maintenant à votre réservation.</p>
             </div>
         </div>
     </section>
@@ -18,11 +18,11 @@
 
     <section class="py-5 container" style="display: flex; justify-content: space-around;">
         <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
+            <img src="{{ logement.img }}" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">Titre hébergement</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="{{ path('app_hebergement_detail') }}" class="btn btn-secondary my-2">Plus de détails</a>
+                <h5 class="card-title">{{ logement.infoLogement.title }}</h5>
+                <p class="card-text">{{ logement.infoLogement.price }}€</p>
+                <p class="card-text">{{ logement.description }}</p>
             </div>
         </div>
 

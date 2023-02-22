@@ -1,4 +1,3 @@
-<!-- Page de tout les mobiles-homes disponible sur le site -->
 
 {% extends 'base.html.twig' %}
 
@@ -20,28 +19,28 @@
     <div class="album py-5 bg-light">
         <div class="container">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                {% for mobilehome in mobilehomes %}
                 <div class="col">
                     <div class="card shadow-sm">
                         <!-- Image du logement -->
-                        <img src="" width="100%" height="225">
+                        <img src="{{ mobilehome.img }}" width="100%" height="225">
                         <div class="card-body">
                             <!-- Titre du logement -->
-                            <p></p>
+                            <p>{{ mobilehome.infoLogement.title }}</p>
                             <!-- Description du logement -->
-                            <p class="card-text">{{ mobile_homes.description }}</p>
+                            <p class="card-text">{{ mobilehome.description }}</p>
                             <!-- Tarif du logement -->
-                            <p>A partir de .. € de la nuit.</p>
+                            <p>A partir de {{ mobilehome.infoLogement.price }} € de la nuit.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <!-- Lien vers la page détail du logement en question -->
-                                    <a href="{{ path('app_hebergement_detail') }}" class="btn btn-secondary my-2">Détail</a>
                                     <!-- Lien vers la page réservation du logement en question -->
-                                    <a href="{{ path('app_hebergement_reservation') }}" class="btn btn-secondary my-2">Réservez</a>
+                                    <a href="{{ path('app_hebergement_reservation', {id: mobilehome.id}) }}" class="btn btn-secondary my-2">Réservez</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                {% endfor %}
             </div>
         </div>
     </div>

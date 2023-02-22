@@ -8,7 +8,7 @@ App\Entity\Reservation:
     nbrAdulte: <numberBetween(2,3)>
     nbrEnfant: <numberBetween(0,2)>
     dateDebut: <dateTimeBetween('05/05/2023','08/10/2023')>
-    dateFin: <dateTimeBetween('03/05/2023','10/10/2023')>
+    dateFin: <dateTimeBetween('07/05/2023','10/10/2023')>
   reservationmobilehome6a8admin{1..3}:
     lastName: <lastName()>
     firstName: <firstName()>
@@ -18,7 +18,7 @@ App\Entity\Reservation:
     nbrAdulte: <numberBetween(1,5)>
     nbrEnfant: <numberBetween(2,3)>
     dateDebut: <dateTimeBetween('05/05/2023','08/10/2023')>
-    dateFin: <dateTimeBetween('03/05/2023','10/10/2023')>
+    dateFin: <dateTimeBetween('07/05/2023','10/10/2023')>
   reservationcaravane4admin{1..3}:
     lastName: <lastName()>
     firstName: <firstName()>
@@ -28,7 +28,7 @@ App\Entity\Reservation:
     nbrAdulte: <numberBetween(1,2)>
     nbrEnfant: <numberBetween(1,2)>
     dateDebut: <dateTimeBetween('05/05/2023','08/10/2023')>
-    dateFin: <dateTimeBetween('03/05/2023','10/10/2023')>
+    dateFin: <dateTimeBetween('07/05/2023','10/10/2023')>
   reservationcaravane6proprio{1..3}:
     lastName: <lastName()>
     firstName: <firstName()>
@@ -38,7 +38,7 @@ App\Entity\Reservation:
     nbrAdulte: <numberBetween(1,5)>
     nbrEnfant: <numberBetween(1,3)>
     dateDebut: <dateTimeBetween('05/05/2023','08/10/2023')>
-    dateFin: <dateTimeBetween('03/05/2023','10/10/2023')>
+    dateFin: <dateTimeBetween('07/05/2023','10/10/2023')>
   reservationemplacement12proprio{1..5}:
     lastName: <lastName()>
     firstName: <firstName()>
@@ -48,4 +48,4 @@ App\Entity\Reservation:
     nbrAdulte: <numberBetween(1,3)>
     nbrEnfant: <numberBetween(1,3)>
     dateDebut: <dateTimeBetween('05/05/2023','08/10/2023')>
-    dateFin: <dateTimeBetween('03/05/2023','10/10/2023')>
+    dateFin: <dateTimeBetween('07/05/2023','10/10/2023')>

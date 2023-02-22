@@ -39,28 +39,40 @@ class LogementRepository extends ServiceEntityRepository
         }
     }
 
-//    /**
-//     * @return Logement[] Returns an array of Logement objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('l')
-//            ->andWhere('l.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('l.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+    //Cette fonction sert à récupérer tous les logements de type mobilehome
+    public function mobilehome(): array
+    {
+        return $this->createQueryBuilder('l')// On récupère la requête de la table logement
+            ->innerJoin('l.infoLogement', 'i')// On fait une jointure avec la table infoLogement
+            ->andWhere('i.type = :val')// On récupère les logements dont le type est égal à la valeur de la variable val
+            ->setParameter('val', 'mobilehome')//On définit la valeur de la variable val en lui donnant la valeur 'mobilehome'
+            ->orderBy('l.id', 'ASC')// Tri par ordre croissant
+            ->getQuery()// On récupère la requête
+            ->getResult();// On récupère le résultat
+    }
 
-//    public function findOneBySomeField($value): ?Logement
-//    {
-//        return $this->createQueryBuilder('l')
-//            ->andWhere('l.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+    //Cette fonction sert à récupérer tous les logements de type caravane
+    public function caravane(): array
+    {
+        return $this->createQueryBuilder('l') // On récupère la requête de la table logement
+            ->innerJoin('l.infoLogement', 'i') // On fait une jointure avec la table infoLogement
+            ->andWhere('i.type = :val') // On récupère les logements dont le type est égal à la valeur de la variable val
+            ->setParameter('val', 'caravane') //On définit la valeur de la variable val en lui donnant la valeur 'caravane'
+            ->orderBy('l.id', 'ASC') // Tri par ordre croissant
+            ->getQuery() // On récupère la requête
+            ->getResult(); // On récupère le résultat
+    }
+
+    //Cette fonction sert à récupérer tous les logements de type emplacement
+    public function emplacement(): array
+    {
+        return $this->createQueryBuilder('l') // On récupère la requête de la table logement
+            ->innerJoin('l.infoLogement', 'i') // On fait une jointure avec la table infoLogement
+            ->andWhere('i.type = :val') // On récupère les logements dont le type est égal à la valeur de la variable val
+            ->setParameter('val', 'emplacement') //On définit la valeur de la variable val en lui donnant la valeur 'emplacement'
+            ->orderBy('l.id', 'ASC') // Tri par ordre croissant
+            ->getQuery() // On récupère la requête
+            ->getResult(); // On récupère le résultat
+    }
+
 }

@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Logement;
+use App\Form\ReservationType;
 use App\Repository\LogementRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,40 +20,50 @@ class HebergementController extends AbstractController
     }
 
     #[Route('/mobilehome', name: 'app_hebergement_mobilehome')]
-    public function mobilehome(LogementRepository $mobilehome): Response
+    public function mobilehome(LogementRepository $logementRepository): Response
     {
-        // Je décide de trouver les logements par leurs info_logement_id (1,2,3,4)
-        $mobilehomes = $mobilehome->findByInfoLogement('infoLogement','1,2,3,4');
+        $mobilehome = $logementRepository->mobilehome();
+        //dd($mobilehome);
         return $this->render('hebergement/mobilehome/index.html.twig', [
-            'mobile_homes' => $mobilehomes
+            'mobilehomes' => $mobilehome,
         ]);
     }
 
     #[Route('/caravane', name: 'app_hebergement_caravane')]
-    public function caravane(): Response
+    public function caravane(LogementRepository $logementRepository): Response
     {
+        $caravane = $logementRepository->caravane();
+        //dd($caravane);
         return $this->render('hebergement/caravane/index.html.twig', [
+            'caravanes' => $caravane,
         ]);
     }
 
     #[Route('/emplacement', name: 'app_hebergement_emplacement')]
-    public function emplacement(): Response
+    public function emplacement(LogementRepository $logementRepository): Response
     {
+        $emplacement = $logementRepository->emplacement();
+        //dd($emplacement);
         return $this->render('hebergement/emplacement/index.html.twig', [
+            'emplacements' => $emplacement,
         ]);
     }
 
-    #[Route('/reservation', name: 'app_hebergement_reservation')]
-    public function reservation(): Response
+    #[Route('/reservation/{id}', name: 'app_hebergement_reservation')]
+    public function reservation(Logement $logement): Response
     {
-        return $this->render('hebergement/reservation/index.html.twig', [
+        $form = $this->createForm(ReservationType::class, $reservation); // On crée le formulaire
+        $form->handleRequest($request); // On récupère les données du formulaire
+        // On vérifie que les valeurs entrées sont correctes
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em->persist($article); // On enregistre l'article
+            $em->flush(); // On enregistre en base de données
+            // On redirige vers la page de visualisation de l'article nouvellement créé
+            return $this->redirectToRoute('/'); // Redirection vers la page d'accueil, par exemple
+        }
+        return $this->renderForm('/create.html.twig', [
+            'form' => $form,
         ]);
     }
 
-    #[Route('/detail', name: 'app_hebergement_detail')]
-    public function detail(): Response
-    {
-        return $this->render('hebergement/detail/index.html.twig', [
-        ]);
-    }
 }

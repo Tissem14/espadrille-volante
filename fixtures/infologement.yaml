@@ -3,35 +3,44 @@ App\Entity\InfoLogement:
     title: Mobile-Home 3 Places
     size: 3
     price: 20
+    type: mobilehome
   typemobilehome4_{1}:
     title: Mobile-Home 4 Places
     size: 4
     price: 24
+    type: mobilehome
   typemobilehome5_{1}:
     title: Mobile-Home 5 Places
     size: 5
     price: 27
+    type: mobilehome
   typemobilehome6a8_{1}:
     title: Mobile-Home 6 à 8 Places
     size: 8
     price: 34
+    type: mobilehome
   typecaravane2_{1}:
     title: Caravane 2 Places
     size: 2
     price: 15
+    type: caravane
   typecaravane4_{1}:
     title: Caravane 4 Places
     size: 4
     price: 18
+    type: caravane
   typecaravane6_{1}:
     title: Caravane 6 Places
     size: 6
     price: 24
+    type: caravane
   typeemplacement8_{1}:
     title: Emplacement 8m²
     size: 8
     price: 12
+    type: emplacement
   typeemplacement12_{1}:
     title: Emplacement 12m²
     size: 12
     price: 14
+    type: emplacement
