@@ -42,6 +42,7 @@ class Reservation
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $dateFin = null;
 
+
     public function getId(): ?int
     {
         return $this->id;

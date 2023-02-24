@@ -30,6 +30,13 @@ class Logement
     #[ORM\Column(length: 255)]
     private ?string $img = null;
 
+    public function __toString()
+    {
+        //return id and owner
+        return $this-> id . ' ' . $this->owner;
+
+    }
+
     public function getId(): ?int
     {
         return $this->id;
